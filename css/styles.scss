@@ -1,0 +1,222 @@
+@import "bourbon/bourbon";
+
+$dark-gray: #424242;
+$gray: #828282;
+$light-gray: #fafafa;
+$border-gray: #dcdcdc;
+$orange: #ef5f3c;
+$blue: #20a1d4;
+$border-radius: 4px;
+
+
+body {
+	font-family: 'Ubuntu', sans-serif;
+	color: $gray;
+}
+
+strong {
+	font-weight: 500;
+}
+
+.orange {
+	color: $orange;
+}
+
+.container {
+	width: 350px;
+	margin: 2em auto;
+}
+
+.tooltip {
+	position: relative;
+	left: 0;
+	top: 0;
+	background-color: #424242;
+	color: #fff;
+	padding: 1em 2em;
+	border-radius: $border-radius;
+	font-weight: 400;
+
+	&::after {
+		content: '';
+		position: absolute;
+		border-style: solid;
+		border-width: 10px 10px 0;
+		border-color: $dark-gray transparent;
+		display: block;
+		width: 0;
+		z-index: 1;
+		margin-left: -10px;
+		bottom: -10px;
+		left: 85%;
+	}
+}
+
+.progress-bar {
+	margin-top: 1em;
+	height: 1em;
+	border: 1px solid $border-gray;
+	background-color: $light-gray;
+	-webkit-box-shadow: inset 0 5px 10px -5px $border-gray;
+	-moz-box-shadow: inset 0 5px 10px -5px $border-gray;
+	box-shadow: inset 0 5px 10px -5px $border-gray;
+
+
+	.progress-fill {
+		width: 75%;
+		height: 100%;
+		background-color: $orange;
+	}
+}
+
+.widget-body {
+	border: 1px solid $border-gray;
+	padding: 1em;
+	font-size: 0.85em;
+	line-height: 1.5;
+	font-weight: 300;
+	border-top-color: transparent;
+	-webkit-box-shadow: 0 8px 6px -6px $border-gray;
+     -moz-box-shadow: 0 8px 6px -6px $border-gray;
+          box-shadow: 0 8px 6px -6px $border-gray;
+
+	p:first-child {
+		margin-top: 0;
+	}
+
+	em {
+		color: $blue;
+	}
+
+	.giving-opts {
+		width: 100%;
+		display: inline-block;
+		position: relative;
+
+		span.currency {
+			position: absolute;
+			top: 0.6em;
+			left: 0.5em;
+			font-size: 18px;
+			font-family: Helvetica, Arial, sans-serif;
+			font-weight: bold;
+			color: $gray;
+		}
+		input.money-input {
+			padding-left: 3em;
+			width: 45%;
+			float: left;
+			height: 50px;
+			padding: 0.5em 0.5em 0.5em 1.25em;
+			font-size: 18px;
+			border: 1px solid $border-gray;
+			border-radius: $border-radius;
+			-webkit-box-shadow: inset 0 5px 10px -5px $border-gray;
+				 -moz-box-shadow: inset 0 5px 10px -5px $border-gray;
+							box-shadow: inset 0 5px 10px -5px $border-gray;
+			box-sizing: border-box;
+			
+			&::-webkit-input-placeholder {
+				color: $dark-gray;
+				font-weight: bold;
+			}
+			&:-moz-placeholder {
+   			color: $dark-gray;  
+   			font-weight: bold;
+			}
+			&::-moz-placeholder {
+				color: $dark-gray;
+				font-weight: bold;
+			}
+			&:-ms-input-placeholder {
+				color: $dark-gray;
+				font-weight: bold;
+			}
+		}
+		button.give-btn {
+			height: 50px;
+			width: 45%;
+			float: right;
+			border: 1px solid #1ab029;
+			border-radius: 4px;
+			background-color: #1cbc2c;
+			color: #fff;
+			box-sizing: border-box;
+			font-size: 18px;
+			font-family: 'Ubuntu', sans-serif;
+			font-weight: 500;
+			cursor: pointer;
+			overflow: hidden;
+			position: relative;
+			@include transition(all 0.5s ease);
+
+			.thanks-hover {
+				color: #fff;
+				position: absolute;
+				top: -50px;
+				width: 100%;
+				left: 0;
+				background-color: $blue;
+				border-radius: 4px;
+				height: 50px;
+				@include transition(all 0.3s ease);
+				
+			}
+			&:hover {
+				.thanks-hover {
+					top: 0;
+					padding-top: 0.75em;
+				}
+			}
+		}
+
+		p.clear {
+			margin: 0.5em 0 0 0;
+			padding: 0;
+			float: left;
+			a {
+				text-decoration: none;
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+}
+
+.bottom-buttons {
+	margin-top: 1em;
+	width: 100%;
+
+	button {
+		width: 45%;
+		background-color: $light-gray;
+		height: 35px;
+		border: 1px solid $border-gray;
+		border-radius: 4px;
+		cursor: pointer;
+		font-family: 'Ubuntu', sans-serif;
+		font-weight: 500;
+		font-size: 1em;
+		color: #9f9f9f;
+		-webkit-box-shadow: 0 5px 10px -4px $border-gray;
+			 -moz-box-shadow: 0 5px 10px -4px $border-gray;
+			      box-shadow: 0 5px 10px -4px $border-gray;
+
+		&:hover,
+		&:active,
+		&:focus {
+			background-color: darken($light-gray, 10%);
+			color: $dark-gray;
+			border-color: darken($border-gray, 10%);
+		}
+	}
+
+	button.save {
+		float: left;
+	}
+	button.share {
+		float: right;
+	}
+}
