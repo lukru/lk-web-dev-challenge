@@ -1,1 +1,3 @@
 .DS\_Store
+.sass-cache
+.sass-cache/*
